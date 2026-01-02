@@ -2,7 +2,7 @@
 
 A modern, interactive 3D web application that visualizes airflow (air particles and streamlines) around an aircraft during different stages of flight. Built with React, TypeScript, Three.js, and a futuristic UI.
 
-![Airflow Visualization](https://img.shields.io/badge/React-18.2-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue) ![Three.js](https://img.shields.io/badge/Three.js-0.158-green)
+![Airflow Visualization](https://img.shields.io/badge/React-18.2-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue) ![Three.js](https://img.shields.io/badge/Three.js-0.160-green)
 
 ## ✈️ Features
 
@@ -83,6 +83,21 @@ A modern, interactive 3D web application that visualizes airflow (air particles 
 
 4. **Open your browser**
    Navigate to `http://localhost:5173` (or the port shown in terminal)
+
+### 🚀 Quick Deploy to Vercel
+
+**No local installation needed!** Just push to GitHub and Vercel will handle everything:
+
+1. Push your code to GitHub
+2. Import the repository in [Vercel](https://vercel.com)
+3. Click "Deploy" - that's it!
+
+Vercel will automatically:
+- Install dependencies
+- Build the project
+- Deploy it live
+
+See `DEPLOYMENT.md` for detailed instructions.
 
 ### Build for Production
 
@@ -177,9 +192,9 @@ airflow-visualization/
 
 - **React 18.2** - UI framework
 - **TypeScript 5.2** - Type safety
-- **Three.js 0.158** - 3D graphics library
+- **Three.js 0.160** - 3D graphics library
 - **React Three Fiber 8.15** - React renderer for Three.js
-- **@react-three/drei 9.88** - Useful helpers for R3F
+- **@react-three/drei 9.92** - Useful helpers for R3F
 - **Zustand 4.4** - State management
 - **Tailwind CSS 3.3** - Styling
 - **Vite 5.0** - Build tool and dev server
@@ -190,6 +205,23 @@ airflow-visualization/
 - Particle count can be adjusted in `AirflowParticles.tsx` (default: 5,000)
 - Performance may vary based on hardware; reduce particle count if needed
 - The application requires WebGL support in your browser
+
+## 🔧 Troubleshooting
+
+### Peer Dependency Warnings (ERESOLVE)
+
+If you encounter `npm WARN ERESOLVE overriding peer dependency` warnings during installation, this is typically harmless and won't affect functionality. However, if you want to suppress these warnings:
+
+1. **Option 1**: Use the legacy peer deps flag:
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+2. **Option 2**: Enable it in `.npmrc` by uncommenting the `legacy-peer-deps=true` line
+
+3. **Option 3**: Update all packages to their latest compatible versions (already done in this project)
+
+The warnings occur because some packages have peer dependency requirements that may conflict with other packages. The application will still work correctly despite these warnings.
 
 ## 🤝 Contributing
 
